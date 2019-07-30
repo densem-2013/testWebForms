@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="testWebForms._Default" EnableViewState="true" EnableViewStateMac="true"%>
+﻿<%@ Page Title="SendEmailTest" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="testWebForms._Default" EnableViewState="true" EnableViewStateMac="true"%>
 
 <%@ Register src="Controls/SendMailControl.ascx" tagname="SendMailControl" tagprefix="uc1" %>
 

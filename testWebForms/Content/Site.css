@@ -15,8 +15,9 @@ body {
 }
 
 #MainContent_SendMailControl1_emailBox {
-    min-width:250px;
-    max-width: 60%;
+    min-width:5%;
+    max-width: 100%;
+    width:auto;
 }
 #MainContent_SendMailControl1_textBox1 {
     border: cadetblue 2px solid;

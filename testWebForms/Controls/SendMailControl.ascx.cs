@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Net.Mail;
+using System.Text;
 
 namespace testWebForms.Controls
 {
@@ -7,20 +8,21 @@ namespace testWebForms.Controls
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+            var textBox1Value = Request.Cookies[textBox1.ClientID]?.Value;
+            if (textBox1Value != null)
             {
-                textBox1.Text = (string)Session["textBox1"];
-                emailBox.Text = (string)Session["emailBox"];
+                textBox1.Text = Encoding.UTF8.GetString(Convert.FromBase64String(textBox1Value));
+            }
+            var emailBoxValue = Request.Cookies[emailBox.ClientID]?.Value;
+            if (emailBoxValue != null)
+            {
+                emailBox.Text = Encoding.UTF8.GetString(Convert.FromBase64String(emailBoxValue));
             }
         }
 
         protected override void OnUnload(EventArgs e)
         {
             base.OnUnload(e);
-
-            Session["textBox1"] = textBox1.Text;
-            Session["emailBox"] = emailBox.Text;
-
         }
 
         protected void ButtonSend_Click(object sender, EventArgs e)
